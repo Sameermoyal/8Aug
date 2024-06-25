@@ -1,0 +1,37 @@
+// 1. [1, 2, 3] subtract by 1 [1,2,2]
+//     [0 0 0 ] do nothing if ith value is 0 do not subtract it by 1
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+    int add=0;
+    
+    vector<int>array={1,2,0};
+    
+    for(int i=0;i<array.size();i++){
+        add+=array[i];
+    }
+   
+    
+    if(add>0){
+        // for(int i=array.size()-1;i>=0;i--){
+        //     cout<<array[i];
+        // }
+        int l=array.size()-1;
+        if(array[l]>0){
+            array[l]-=1;
+        }else{
+            array[l]=9;
+            array[l-1]-=1;
+        }
+        
+    }
+    
+    for(auto it:array){
+        cout<<it<<" ";
+    }
+    
+}
